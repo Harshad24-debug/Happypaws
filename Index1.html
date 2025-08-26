@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Paws - Pet Cleaning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: teal;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+    nav {
+      background: #004d4d;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: teal;
+    }
+    .service, .pricing-plan, .testimonial, form {
+      background: white;
+      margin: 15px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 12px 25px;
+      background: teal;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    button:hover {
+      background: darkslategray;
+    }
+    input, select {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    footer {
+      background: #004d4d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Homepage -->
+  <header id="home">
+    <h1>🐾 Happy Paws Pet Cleaning 🐾</h1>
+    <p>Keeping your pets fresh, clean, and happy!</p>
+    <button onclick="scrollToSection('services')">Explore Services</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#booking">Book Now</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At <strong>Happy Paws</strong>, we believe every pet deserves the best care.  
+    Our trained team specializes in safe, gentle, and professional cleaning services to keep your pets happy and healthy.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service">
+      <h3>🐶 Dog Bath & Grooming</h3>
+      <p>Full wash, brushing, and nail trimming for your furry friends.</p>
+      <button onclick="scrollToSection('booking')">Book Now</button>
+    </div>
+    <div class="service">
+      <h3>🐱 Cat Cleaning</h3>
+      <p>Gentle cleaning and fur care tailored for cats.</p>
+      <button onclick="scrollToSection('booking')">Book Now</button>
+    </div>
+    <div class="service">
+      <h3>🦜 Bird Care</h3>
+      <p>Safe feather cleaning and grooming for birds.</p>
+      <button onclick="scrollToSection('booking')">Book Now</button>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-plan">
+      <h3>Basic 🐾</h3>
+      <p>Quick Wash & Brush</p>
+      <p><strong>₹499</strong></p>
+    </div>
+    <div class="pricing-plan">
+      <h3>Premium ✨</h3>
+      <p>Full Grooming + Nail Care</p>
+      <p><strong>₹999</strong></p>
+    </div>
+    <div class="pricing-plan">
+      <h3>Deluxe 👑</h3>
+      <p>Spa Treatment + Styling</p>
+      <p><strong>₹1499</strong></p>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking">
+    <h2>Book a Service</h2>
+    <form onsubmit="sendBooking(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <select id="petType" required>
+        <option value="">Select Pet Type</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Bird">Bird</option>
+      </select>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option value="Dog Bath & Grooming">Dog Bath & Grooming</option>
+        <option value="Cat Cleaning">Cat Cleaning</option>
+        <option value="Bird Care">Bird Care</option>
+      </select>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <input type="tel" id="contact" placeholder="Your Contact Number" required>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>"Happy Paws made my dog look amazing! He’s never been this fluffy!" 🐶</p>
+      <strong>- Sarah M.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"My cat hates baths, but the team handled her so gently. Highly recommend!" 🐱</p>
+      <strong>- Ramesh K.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Great service for my parrot. Safe and caring staff!" 🦜</p>
+      <strong>- Anita P.</strong>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 Phone: <a href="tel:+919322309244">93223 09244</a></p>
+    <p>💬 WhatsApp: <a href="https://wa.me/919322309244" target="_blank">Chat with us</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Happy Paws Pet Cleaning. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function sendBooking(event) {
+      event.preventDefault();
+
+      let name = document.getElementById('name').value;
+      let petType = document.getElementById('petType').value;
+      let service = document.getElementById('service').value;
+      let date = document.getElementById('date').value;
+      let time = document.getElementById('time').value;
+      let contact = document.getElementById('contact').value;
+
+      let message = `Hello Happy Paws! 🐾%0AI would like to book a service.%0A%0A👤 Name: ${name}%0A🐾 Pet Type: ${petType}%0A🛁 Service: ${service}%0A📅 Date: ${date}%0A⏰ Time: ${time}%0A📞 Contact: ${contact}`;
+
+      // Redirect to WhatsApp with pre-filled message
+      window.open(`https://wa.me/919322309244?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Paws - Pet Cleaning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: teal;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.8em;
+    }
+    nav {
+      background: #004d4d;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 18px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: teal;
+    }
+    .service, .pricing-plan, .testimonial, form {
+      background: white;
+      margin: 15px auto;
+      padding: 20px;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 12px 25px;
+      background: teal;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 1em;
+    }
+    button:hover {
+      background: darkslategray;
+    }
+    input, select {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    footer {
+      background: #004d4d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Homepage -->
+  <header id="home">
+    <h1>🐾 Happy Paws Pet Cleaning 🐾</h1>
+    <p>Keeping your pets fresh, clean, and happy!</p>
+    <button onclick="scrollToSection('services')">Explore Services</button>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#booking">Book Now</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>At <strong>Happy Paws</strong>, we believe every pet deserves the best care.  
+    Our trained team specializes in safe, gentle, and professional cleaning services to keep your pets happy and healthy.</p>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service">
+      <h3>🐶 Dog Bath & Grooming</h3>
+      <p>Full wash, brushing, and nail trimming for your furry friends.</p>
+      <button onclick="scrollToSection('booking')">Book Now</button>
+    </div>
+    <div class="service">
+      <h3>🐱 Cat Cleaning</h3>
+      <p>Gentle cleaning and fur care tailored for cats.</p>
+      <button onclick="scrollToSection('booking')">Book Now</button>
+    </div>
+    <div class="service">
+      <h3>🦜 Bird Care</h3>
+      <p>Safe feather cleaning and grooming for birds.</p>
+      <button onclick="scrollToSection('booking')">Book Now</button>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-plan">
+      <h3>Basic 🐾</h3>
+      <p>Quick Wash & Brush</p>
+      <p><strong>₹499</strong></p>
+    </div>
+    <div class="pricing-plan">
+      <h3>Premium ✨</h3>
+      <p>Full Grooming + Nail Care</p>
+      <p><strong>₹999</strong></p>
+    </div>
+    <div class="pricing-plan">
+      <h3>Deluxe 👑</h3>
+      <p>Spa Treatment + Styling</p>
+      <p><strong>₹1499</strong></p>
+    </div>
+  </section>
+
+  <!-- Booking Section -->
+  <section id="booking">
+    <h2>Book a Service</h2>
+    <form onsubmit="sendBooking(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <select id="petType" required>
+        <option value="">Select Pet Type</option>
+        <option value="Dog">Dog</option>
+        <option value="Cat">Cat</option>
+        <option value="Bird">Bird</option>
+      </select>
+      <select id="service" required>
+        <option value="">Select Service</option>
+        <option value="Dog Bath & Grooming">Dog Bath & Grooming</option>
+        <option value="Cat Cleaning">Cat Cleaning</option>
+        <option value="Bird Care">Bird Care</option>
+      </select>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <input type="tel" id="contact" placeholder="Your Contact Number" required>
+      <button type="submit">Submit Booking</button>
+    </form>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>"Happy Paws made my dog look amazing! He’s never been this fluffy!" 🐶</p>
+      <strong>- Sarah M.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"My cat hates baths, but the team handled her so gently. Highly recommend!" 🐱</p>
+      <strong>- Ramesh K.</strong>
+    </div>
+    <div class="testimonial">
+      <p>"Great service for my parrot. Safe and caring staff!" 🦜</p>
+      <strong>- Anita P.</strong>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📞 Phone: <a href="tel:+919322309244">93223 09244</a></p>
+    <p>💬 WhatsApp: <a href="https://wa.me/919322309244" target="_blank">Chat with us</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Happy Paws Pet Cleaning. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function sendBooking(event) {
+      event.preventDefault();
+
+      let name = document.getElementById('name').value;
+      let petType = document.getElementById('petType').value;
+      let service = document.getElementById('service').value;
+      let date = document.getElementById('date').value;
+      let time = document.getElementById('time').value;
+      let contact = document.getElementById('contact').value;
+
+      let message = `Hello Happy Paws! 🐾%0AI would like to book a service.%0A%0A👤 Name: ${name}%0A🐾 Pet Type: ${petType}%0A🛁 Service: ${service}%0A📅 Date: ${date}%0A⏰ Time: ${time}%0A📞 Contact: ${contact}`;
+
+      // Redirect to WhatsApp with pre-filled message
+      window.open(`https://wa.me/919322309244?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
